@@ -3,7 +3,7 @@
 
 import matrixoperations as mo
 
-def main(n):
+def naive(n):
     a = mo.buildRandMatrix(n)
     b = mo.buildRandMatrix(n)
     
@@ -30,4 +30,4 @@ def matrixMult(a,b):
         print "Error: matrices are not the same size"
         print "Matrix A: %dx%d" % (len(a), len(a[0]))
         print "Matrix B: %dx%d" % (len(b), len(b[0]))
-main(5) #Call main() with matrix size
+#main(5) #Call main() with matrix size

@@ -3,7 +3,7 @@
 
 import matrixoperations as mo
 
-def main(n):
+def divideAndConquer(n):
     a = mo.buildRandMatrix(n)
     b = mo.buildRandMatrix(n)
     
@@ -78,5 +78,5 @@ def dcmm(c,a,b):
 
     
     
-main(6) #Call main() with matrix size
+#main(6) #Call main() with matrix size
         #Only works with matrices of size 2^n for some reason
