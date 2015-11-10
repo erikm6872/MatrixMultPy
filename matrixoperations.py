@@ -35,9 +35,6 @@ def recombineSubMatrices(a,b,c,d):
         
 def matricesSameSize(a,b):
     if len(a) != len(b) or len(a) != len(a[0]) or len(a[0]) != len(b[0]):
-        print "Error: matrices are not the same size"
-        print "Matrix A: %dx%d" % (len(a), len(a[0]))
-        print "Matrix B: %dx%d" % (len(b), len(b[0]))
         return False
     else:
         return True

@@ -14,6 +14,9 @@ def main(n):
     
     c = dcmm(c,a,b)
     mo.printMatrix(c, "C")
+    
+    if mo.matricesSameSize(a,c) == False:
+        print "Warning: Input and output matrices are different sizes"
     #print "len(a) = %d" % len(a)
     #print "len(b) = %d" % len(b)
     #print "len(c) = %d" % len(c)
@@ -68,9 +71,12 @@ def dcmm(c,a,b):
                     c[i][j] = c[i][j] + t[i][j]
 
         return c
- 
+    else:
+        print "Error: matrices are not the same size"
+        print "Matrix A: %dx%d" % (len(a), len(a[0]))
+        print "Matrix B: %dx%d" % (len(b), len(b[0]))
 
     
     
-main(4) #Call main() with matrix size
+main(6) #Call main() with matrix size
         #Only works with matrices of size 2^n for some reason
