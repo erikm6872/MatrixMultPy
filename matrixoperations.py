@@ -18,19 +18,19 @@ def buildRandMatrix(n):
             retMatrix[x][y] = random.randint(0,10)
     return retMatrix
     
-def recombineSubMatrices(a,b,c,d):
+def recombineSubMatrices(a,b,c,d):  #a = m11, b = m12, c = m21, d = m22
         n = len(a) * 2
         retM = [[0 for x in range(n)] for x in range(n)]
         for i in range(len(a)):
             for j in range(len(a)):
-                retM[i][j] = a[i][j]
+                retM[i][j] = a[i][j]    #Copy values from a -> upper left
             for k in range(len(a), n):
-                retM[i][k] = b[i][k-len(a)]
+                retM[i][k] = b[i][k-len(a)] #Copy values from b -> upper right
         for l in range(len(a), n):
             for m in range(len(a)):
-                retM[l][m] = c[l-len(a)][m]
+                retM[l][m] = c[l-len(a)][m] #c -> lower left
             for o in range(len(a), n):
-                retM[l][o] = d[l-len(a)][o-len(a)]
+                retM[l][o] = d[l-len(a)][o-len(a)]  #d -> lower right
         return retM
         
 def matricesSameSize(a,b):
@@ -42,7 +42,7 @@ def matricesSameSize(a,b):
 def subMatrix(m,i,j):
     n = len(m)
     nP = n/2
-    retM = [[0 for x in range(nP)] for x in range(nP)]
+    retM = [[0 for x in range(nP)] for x in range(nP)] #create empty matrix 1/4 the size of input
     if i == 1:
         for r in range(nP):
             if j == 1:

@@ -4,17 +4,28 @@
 import matrixoperations as mo
 import divideandconquer as dc
 import naive as n
+import time
 
 def main():
-    n.naive(4)
-    n.naive(5)
-    n.naive(6)
-    n.naive(7)
-    n.naive(8)
+    minN = 8
+    maxN = 32
+    startTime = time.time()
+    nTime = []
+    dcTime = []
+    for i in range(minN,maxN):
+        n.naive(i)
+        print 
+        nTime.append(time.time() - startTime)
+        startTime = time.time()
+    for i in range(minN,maxN):
+        dc.divideAndConquer(i)
+        dcTime.append(time.time() - startTime)
+        startTime = time.time()
+    print "Naive algorithm times:"
+    for i in range(minN,maxN):
+        print "%f" % nTime[i-minN]
+    print "Divide and Conquer algorithm times:"
+    for i in range(minN,maxN):
+        print "%f" % dcTime[i-minN]
     
-    dc.divideAndConquer(4)
-    dc.divideAndConquer(5)
-    dc.divideAndConquer(6)
-    dc.divideAndConquer(7)
-    dc.divideAndConquer(8)
 main() 
