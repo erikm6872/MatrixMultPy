@@ -17,9 +17,6 @@ def divideAndConquer(n):
     
     if mo.matricesSameSize(a,c) == False:
         print "Warning: Input and output matrices are different sizes"
-    #print "len(a) = %d" % len(a)
-    #print "len(b) = %d" % len(b)
-    #print "len(c) = %d" % len(c)
         
 #Returns c, an nxn matrix that is the product of a and b
 def dcmm(c,a,b):    
